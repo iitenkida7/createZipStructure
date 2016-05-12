@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__'/ZipStructure.php')
+require_once(__DIR__.'/ZipStructure.php');
 
 $zipd = new ZipStructure;
 $name = $_GET['name'];
