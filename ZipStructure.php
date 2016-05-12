@@ -1,12 +1,7 @@
 <?php
-
 /*
-
-- 空ディレクトリの構造体を作成してzipファイルとしてダウンロードさせるClass
-- ダウンロード拡張子をZipにするにはRewriteでゴニョる必要がる。
-  Sample)
-  RewriteRule (.*).zip /zip.php?name=$1 [L]
-- zipファイルを一度ファイルとして保存する必要はどうしてもありそうだ。
+  - 空ディレクトリの構造体を作成してzipファイルとしてダウンロードさせるClass
+  - zipファイルを一度ファイルとして保存する必要はどうしてもありそうだ。
 */
 
 class ZipStructure{
@@ -40,6 +35,7 @@ class ZipStructure{
 			return false;
 		}else{
 			header('Content-Type: application/zip');
+			header("Content-Disposition: attachment; filename=" . $zipName);
 			readfile($zipName);
 			return true;
 		}
